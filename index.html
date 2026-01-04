@@ -1,170 +1,236 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>HakamPro Dispatcher - הסדרן שעובד בשבילך</title>
-  <header class="hero">
-    <img src="hakampro_logo.png" alt="HakamPro Bot" class="hero-logo">
-    <h1>HakamPro Dispatcher – הסדרן שעובד בשבילך</h1>
-    <p>מערכת שמסננת עבורך את קבוצות הוואטסאפ…</p>
-</header>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    .hero-logo {
-    display: block;
-    margin: 0 auto 16px;  /* באמצע + רווח מתחת */
-    max-width: 180px;     /* אפשר לשחק עם הגודל */
-    border-radius: 16px;
-}
-
-    body {
+    body{
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      direction: rtl;
-      text-align: right;
-      .hero {
-  text-align: center;   /* ממקד את כל מה שבכותרת (לוגו + H1 + שורה מתחת) */
-}
-
+      background:#f5f5f5;
+      margin:0; padding:0;
+      direction: rtl; text-align:right;
+      color:#222;
     }
-    .container {
-      max-width: 900px;
+    .container{
+      max-width: 980px;
       margin: 0 auto;
-      padding: 20px 15px 40px;
-      background: #ffffff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      background:#fff;
+      padding: 22px 16px 40px;
+      box-shadow: 0 0 14px rgba(0,0,0,0.08);
     }
-    h1 {
-      color: #222;
-      font-size: 2rem;
-      margin-bottom: 0.3em;
-       text-align: center;   /* מרכז את הכותרת */
+    .top{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
     }
-    h2 {
-      color: #333;
-      margin-top: 1.8em;
-      margin-bottom: 0.3em;
+    .badge{
+      display:inline-block;
+      background:#ffe082;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      color:#333;
+      margin-bottom:10px;
     }
-    p {
-      line-height: 1.6;
-      color: #444;
+    h1{ margin: 6px 0 8px; font-size: 2rem; }
+    .sub{ margin:0 0 16px; color:#444; line-height:1.6; }
+    h2{ margin: 22px 0 10px; font-size: 1.35rem; color:#333; }
+    p{ margin: 8px 0; line-height:1.7; color:#444; }
+    ul,ol{ margin: 8px 0 8px; padding-right: 20px; color:#444; line-height:1.8; }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
     }
-    ul {
-      color: #444;
-      line-height: 1.6;
+    @media (max-width: 780px){
+      .grid{ grid-template-columns: 1fr; }
     }
-    .badge {
-      display: inline-block;
-      background: #ffe082;
-      color: #444;
+    .card{
+      background:#fafafa;
+      border:1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .cta{
+      margin: 18px 0 6px;
+      padding: 16px;
+      border-radius: 14px;
+      background:#fff3cd;
+      border:1px solid #ffeeba;
+    }
+    .pill{
+      display:inline-block;
+      border:1px solid rgba(0,0,0,0.12);
       padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
+      border-radius:999px;
+      font-size:0.92rem;
+      background:#fff;
+      margin: 4px 0;
     }
-    .cta-box {
-      margin: 25px 0;
-      padding: 18px;
-      border-radius: 10px;
-      background: #fff3cd;
-      border: 1px solid #ffeeba;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: #ff9800;
-      color: #fff;
-      padding: 12px 26px;
+    .btn{
+      display:inline-block;
+      background:#ff9800;
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
+      padding: 12px 22px;
       border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
       margin-top: 10px;
     }
-    .btn-primary:hover {
-      background: #fb8c00;
+    .btn:hover{ background:#fb8c00; }
+    .mini{
+      font-size:0.92rem;
+      color:#666;
+      margin-top:8px;
     }
-    .footer {
-      margin-top: 30px;
-      font-size: 0.9rem;
-      color: #666;
+    .footer{
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      color:#666;
+      font-size:0.92rem;
+      line-height:1.7;
+    }
+    .role-list li{
+      list-style:none;
+      padding: 8px 10px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      margin: 8px 0;
+    }
+    .role-icon{
+      font-size: 1.15rem;
+      margin-left: 8px;
+    }
+    .strong{ font-weight:700; color:#222; }
+    .notice{
+      background:#ffffff;
+      border:1px dashed rgba(0,0,0,0.18);
+      border-radius: 14px;
+      padding: 12px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <span class="badge">🚕 תוכנה חכמה לנהגים ושליחים</span>
-    <h1>HakamPro Dispatcher – הסדרן שעובד בשבילך</h1>
-    <p>
-      המערכת שסורקת עבורך את קבוצות הוואטסאפ שב־"מועדפים",
-      מסננת לפי עיר, ושולחת אליך רק נסיעות ומשלוחים רלוונטיים –
-      בלי רעש, בלי גלילה, ובלי לבזבז זמן.
-    </p>
 
-    <h2>למי זה מתאים?</h2>
-    <ul>
-      <li>נהגי מוניות</li>
-      <li>נהגי הסעות</li>
-      <li>שליחים </li>
-      <li>כל מי שעובד עם קבוצות וואטסאפ של נסיעות ומשלוחים</li>
-    </ul>
-
-    <h2>איך זה עובד?</h2>
-    <ol>
-      <li>מוסיפים את קבוצות הוואטסאפ הרלוונטיות לקטגוריית <strong>"מועדפים"</strong>.</li>
-      <li>מפעילים את <strong>HakamPro Dispatcher</strong> במחשב.</li>
-      <li>המערכת סורקת את הקבוצות, מסננת לפי עיר/אזור ומציגה רק נסיעות רלוונטיות.</li>
-    </ol>
-
-    <h2>יתרונות לנהג</h2>
-    <ul>
-      <li>פחות זמן מול הטלפון – יותר זמן על הכביש.</li>
-      <li>לא מפספסים נסיעות בגלל שההודעה טבעה בין מאות הודעות.</li>
-      <li>סינון לפי עיר/אזור עבודה – אתה שולט איפה לעבוד.</li>
-      <li>עובד עם הקבוצות הקיימות שלך, בלי לשנות הרגלים.</li>
-    </ul>
-
-    <div class="cta-box">
-      <p>
-        🧪 <strong>7 ימים ניסיון חינם</strong> – כדי להכיר את המערכת בלי התחייבות.<br>
-        💰 לאחר מכן: <strong>500 ש"ח בלבד, תשלום חד־פעמי</strong>.
-      </p>
-      <p><strong>דרישות מערכת:</strong></p>
-      <ul>
-        <li>מחשב ביתי / נייד עם Windows</li>
-        <li>אינטרנט פעיל</li>
-        <li>דפדפני Chrome ו־Firefox מותקנים</li>
-        <li>חשבון WhatsApp פעיל</li>
-      </ul>
-
-      <a class="btn-primary"
-         href="https://1drv.ms/u/c/db0c3a46b2c77df0/IQDZr-9xqD-lT4JkCXItHf2fAcZ8XphDnM2QPTsPaFQYnk4?e=2QrBcW"
-         target="_blank">
-        📥 הורדת HakamPro Dispatcher
-      </a>
-
-      <p style="margin-top:10px; font-size:0.9rem;">
-        אחרי ההורדה – לחלץ את הקובץ, להיכנס לתיקיית <strong>SadranDriverPack</strong> וללחוץ על <strong>START</strong>.<br>
-        ייתכן ש־Windows או האנטי־וירוס יציגו אזהרת אבטחה לגבי קובץ ההפעלה – יש לבחור "המשך בכל זאת" / "Run anyway" אם אתה סומך על הקובץ.
-      </p>
+    <div class="top">
+      <div>
+        <span class="badge">🚀 HakamPro Dispatcher</span>
+        <h1>הסדרן שעובד בשבילך</h1>
+        <p class="sub">
+          מערכת חכמה שסורקת את קבוצות הוואטסאפ שב־<span class="strong">"מועדפים"</span>,
+          מסננת לפי העיר שאתה בוחר, ושולחת אליך רק נסיעות/משלוחים רלוונטיים — בלי רעש ובלי לבזבז זמן.
+        </p>
+      </div>
     </div>
 
-    <h2>שאלות? צריך התקנה מרחוק?</h2>
+    <h2>למי זה מתאים?</h2>
+    <ul class="role-list">
+      <li><span class="role-icon">🚕</span><span class="strong">נהג מונית</span> — רוצה לקבל רק הודעות שמתאימות לעיר/אזור שלך.</li>
+      <li><span class="role-icon">🚌</span><span class="strong">נהג הסעות</span> — רוצה לזהות נסיעות מתאימות במהירות ולסגור עבודה.</li>
+      <li><span class="role-icon">🏍️</span><span class="strong">שליחים</span> — רוצה לראות רק משלוחים רלוונטיים בלי לטבוע בהודעות.</li>
+    </ul>
+
+    <div class="grid">
+      <div class="card">
+        <h2>איך מתחילים לעבוד? (צעד-צעד)</h2>
+        <ol>
+          <li>פתח את WhatsApp Web במחשב (דרך התוכנה).</li>
+          <li>
+            במקום שבו רשום <span class="strong">START</span> — עכשיו רשום:
+            <span class="pill">סרוק ב-QR את הוואטסאפ בטלפון שלך</span>
+          </li>
+          <li>
+            הגדר את <span class="strong">מספר הטלפון שלך</span> בתוכנה (כמו שמופיע בהגדרות).
+          </li>
+          <li>
+            הוסף את קבוצות היעד שלך לקטגוריה <span class="strong">"מועדפים"</span> בוואטסאפ.
+          </li>
+          <li>
+            במקום שבו רשום <span class="strong"> / שם</span> — רשום:
+            <span class="pill">את/אתה</span>
+          </li>
+          <li>בחר עיר/אזור עבודה → והמערכת תציג לך רק הודעות חדשות ורלוונטיות.</li>
+        </ol>
+
+        <div class="notice">
+          <p style="margin:0;">
+            ✅ הכל עובד בצורה פשוטה: אתה קובע את העיר — והסדרן מסנן עבורך את ההודעות החדשות.
+          </p>
+        </div>
+
+        <!-- ✅ פקודות הועברו לתוך הכרטיס כדי לשמור על מבנה ה-Grid -->
+        <div class="notice">
+          <p style="margin:0 0 6px 0;">
+            <span class="strong">פקודות שימוש מהירות בוואטסאפ:</span>
+          </p>
+          <ul style="margin:0; padding-right:18px; line-height:1.8;">
+            <li><span class="strong">פנוי באשדוד</span> – מציין שאתה פנוי בעיר אשדוד.</li>
+            <li><span class="strong">פנוי בתל אביב+</span> – פנוי ומחפש גם בערים קרובות.</li>
+            <li><span class="strong">תפוס</span> – עוצר שליחת נסיעות זמנית.</li>
+            <li><span class="strong">עצור</span> – עוצר את המערכת עד הודעה חדשה.</li>
+            <li><span class="strong">רענון</span> – מרענן את הסינון והמצב.</li>
+          </ul>
+          <p style="margin:6px 0 0 0; font-size:0.92rem; color:#555;">
+            הפקודות נשלחות בוואטסאפ בצורה חופשית, בדיוק כמו הודעה רגילה.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>מחירון ותמיכה</h2>
+        <p>🧪 <span class="strong">7 ימים ניסיון חינם</span> – בלי התחייבות.</p>
+        <p>💰 לאחר מכן: <span class="strong">500 ₪ תשלום חד-פעמי</span>.</p>
+
+        <div class="notice">
+          <p style="margin:0 0 8px 0;"><span class="strong">תמיכה (אופציונלי – רק למי שרוצה):</span></p>
+          <ul style="margin:0; padding-right: 18px;">
+            <li>🛠️ <span class="strong">תמיכה רגילה:</span> 32 ₪ לחודש (רשות).</li>
+            <li>🚀 <span class="strong">מסלול פרו:</span> 100 ₪ לחודש – כולל <span class="strong">חיזוי</span> ו־<span class="strong">סידור יומי</span>.</li>
+          </ul>
+        </div>
+
+        <h2>פרטיות ודיסקרטיות</h2>
+        <p>
+          🔒 המערכת עובדת <span class="strong">מקומית על המחשב</span> שלך.
+          <span class="strong">לא שומרת מידע בענן</span> ולא שולחת נתונים לשרתים חיצוניים.
+          הכל אישי, פרטי ודיסקרטי.
+        </p>
+
+        <a class="btn"
+           href="https://1drv.ms/u/c/db0c3a46b2c77df0/IQDZr-9xqD-lT4JkCXItHf2fAcZ8XphDnM2QPTsPaFQYnk4?e=2QrBcW"
+           target="_blank">
+          📥 הורדת HakamPro Dispatcher
+        </a>
+        <p class="mini">
+          אחרי ההורדה: חלץ את הקבצים לתיקייה → הפעל את התוכנה → סרוק QR והתחל לעבוד.
+        </p>
+      </div>
+    </div>
+
+    <h2>דרישות מערכת</h2>
+    <ul>
+      <li>Windows (מחשב נייח/נייד)</li>
+      <li>אינטרנט פעיל</li>
+      <li>WhatsApp פעיל בטלפון</li>
+      <li>Chrome / Firefox מותקנים</li>
+    </ul>
+
+    <h2>שאלות / התקנה / תמיכה</h2>
     <p>
-      נשמח לעזור בהתקנה, בהגדרת הקבוצות ובשימוש יומיומי בתוכנה.
-    </p>
-    <p>
-      📞 מרדכי – מחלקת פיתוח: <strong>052-6015599</strong><br>
-      📞 אביחי – מחלקת שיווק: <strong>054-6558391</strong>
+      📞 מרדכי – מחלקת פיתוח: <span class="strong">052-6015599</span><br>
+      📞 אביחי – מחלקת שיווק: <span class="strong">054-6558391</span>
     </p>
 
     <div class="footer">
-      🚕 HakamPro Dispatcher – שהנסיעות והמשלוחים יחפשו אותך, לא להפך.
+      🚕 HakamPro Dispatcher — שהנסיעות יחפשו אותך, לא להפך.
     </div>
   </div>
 </body>
 </html>
-
-
-
-
