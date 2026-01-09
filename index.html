@@ -2,18 +2,8 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>HakamPro Dispatcher - הסדרן שעובד בשבילך</title>
+  <title>HakamPro Dispatcher - הסדרן האישי שלך</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Google tag (gtag.js) – Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MVD5ESN3L"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-9MVD5ESN3L');
-  </script>
-
   <style>
     body{
       font-family: Arial, Helvetica, sans-serif;
@@ -35,6 +25,8 @@
       align-items:flex-start;
       justify-content:space-between;
       flex-wrap:wrap;
+      flex-direction:column;
+      align-items:center;
     }
     .badge{
       display:inline-block;
@@ -45,11 +37,33 @@
       color:#333;
       margin-bottom:10px;
     }
-    h1{ margin: 6px 0 8px; font-size: 2rem; }
-    .sub{ margin:0 0 16px; color:#444; line-height:1.6; }
-    h2{ margin: 22px 0 10px; font-size: 1.35rem; color:#333; }
-    p{ margin: 8px 0; line-height:1.7; color:#444; }
-    ul,ol{ margin: 8px 0 8px; padding-right: 20px; color:#444; line-height:1.8; }
+    h1{
+      margin: 6px 0 8px;
+      font-size: 2rem;
+      text-align:center;
+    }
+    .sub{
+      margin:0 0 16px;
+      color:#444;
+      line-height:1.6;
+      text-align:center;
+    }
+    h2{
+      margin: 22px 0 10px;
+      font-size: 1.35rem;
+      color:#333;
+    }
+    p{
+      margin: 8px 0;
+      line-height:1.7;
+      color:#444;
+    }
+    ul,ol{
+      margin: 8px 0 8px;
+      padding-right: 20px;
+      color:#444;
+      line-height:1.8;
+    }
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -64,13 +78,6 @@
       border-radius: 14px;
       padding: 14px;
     }
-    .cta{
-      margin: 18px 0 6px;
-      padding: 16px;
-      border-radius: 14px;
-      background:#fff3cd;
-      border:1px solid #ffeeba;
-    }
     .pill{
       display:inline-block;
       border:1px solid rgba(0,0,0,0.12);
@@ -82,7 +89,7 @@
     }
     .btn{
       display:inline-block;
-      background:#ff9800;
+      background:#25D366;
       color:#fff;
       text-decoration:none;
       font-weight:bold;
@@ -90,7 +97,7 @@
       border-radius: 999px;
       margin-top: 10px;
     }
-    .btn:hover{ background:#fb8c00; }
+    .btn:hover{ background:#1ebe5d; }
     .mini{
       font-size:0.92rem;
       color:#666;
@@ -103,6 +110,7 @@
       color:#666;
       font-size:0.92rem;
       line-height:1.7;
+      text-align:center;
     }
     .role-list li{
       list-style:none;
@@ -129,112 +137,134 @@
 <body>
   <div class="container">
 
+    <!-- כותרת עליונה -->
     <div class="top">
-      <div>
+      <div style="text-align:center;">
         <span class="badge">🚀 HakamPro Dispatcher</span>
-        <h1>הסדרן שעובד בשבילך</h1>
+        <h1>הסדרן האישי שלך</h1>
         <p class="sub">
-          מערכת חכמה שסורקת את הקבוצות בוואטסאפ אצלך בטלפון, מסננת לפי העיר שאתה בוחר,
-          ושולחת אליך למחשב רק נסיעות/משלוחים רלוונטיים — בלי רעש, בלי גלילה ובלי לבזבז זמן.
+          מערכת חכמה שרצה ומסננת עבורך נסיעות ומשלוחים
+          שמפורסמים אצלך בקבוצות הווטסאפ בטלפון –  
+          כדי שתקבל רק את מה שבאמת רלוונטי, בלי רעש ובלי בזבוז זמן.
         </p>
       </div>
     </div>
 
+    <!-- למי זה מתאים -->
     <h2>למי זה מתאים?</h2>
     <ul class="role-list">
-      <li><span class="role-icon">🚕</span><span class="strong">נהג מונית</span> — רוצה לקבל רק הודעות שמתאימות לעיר/אזור שלך.</li>
-      <li><span class="role-icon">🚌</span><span class="strong">נהג הסעות</span> — רוצה לזהות נסיעות מתאימות במהירות ולסגור עבודה.</li>
-      <li><span class="role-icon">🏍️</span><span class="strong">שליחים</span> — רוצה לראות רק משלוחים רלוונטיים בלי לטבוע בהודעות.</li>
+      <li>
+        <span class="role-icon">🚕</span>
+        <span class="strong">נהגי מוניות</span> – רוצים לראות רק נסיעות שמתאימות לעיר ולאזור שלכם.
+      </li>
+      <li>
+        <span class="role-icon">🚌</span>
+        <span class="strong">נהגי הסעות</span> – רוצים לזהות נסיעות מהר, בלי לשבת על הוואטסאפ כל היום.
+      </li>
+      <li>
+        <span class="role-icon">🏍️</span>
+        <span class="strong">שליחים</span> – רוצים סינון חכם של משלוחים רלוונטיים בלבד.
+      </li>
     </ul>
 
     <div class="grid">
+      <!-- צד ימין: איך זה עובד -->
       <div class="card">
-        <h2>איך מתחילים לעבוד? (צעד-צעד)</h2>
+        <h2>איך זה עובד בפועל?</h2>
         <ol>
-          <li>פתח את WhatsApp Web במחשב (דרך התוכנה).</li>
+          <li>קובעים שיחה קצרה / התקנה (טלפון או וואטסאפ) עם אחד מאיתנו.</li>
           <li>
-            במקום שבו רשום <span class="strong">START</span> — עכשיו רשום:
-            <span class="pill">סרוק ב-QR את הוואטסאפ בטלפון שלך</span>
+            מחברים פעם אחת את הוואטסאפ שלך למערכת
+            (חיבור מאובטח דרך QR – בפגישה או מרחוק).
           </li>
           <li>
-            הגדר את <span class="strong">מספר הטלפון שלך</span> בתוכנה (כמו שמופיע בהגדרות).
+            המערכת שלנו מתחילה לסרוק עבורך את
+            <span class="strong">קבוצות הוואטסאפ שלך</span>
+            ולסנן מה רלוונטי לפי העיר/אזור שאתה בוחר.
           </li>
           <li>
-            הוסף את קבוצות היעד שלך לקטגוריה <span class="strong">"מועדפים"</span> בוואטסאפ.
+            אתה ממשיך לעבוד רגיל מהטלפון – שולח פקודות פשוטות בוואטסאפ, למשל:
+            <ul style="margin-top:4px; padding-right:18px;">
+              <li><span class="strong">פנוי באשדוד</span> – המערכת מתמקדת בנסיעות מאזור אשדוד.</li>
+              <li><span class="strong">פנוי בתל אביב+</span> – גם תל אביב וגם אזור מרכז.</li>
+              <li><span class="strong">תפוס</span> – עוצר זמנית שליחת נסיעות.</li>
+              <li><span class="strong">עצור</span> – עוצר את המערכת עד לפקודה הבאה.</li>
+            </ul>
           </li>
           <li>
-            במקום שבו רשום <span class="strong"> / שם</span> — רשום:
-            <span class="pill">את/אתה</span>
+            משם – HakamPro Dispatcher מתנהג כמו
+            <span class="strong">"סדרן אישי"</span> שעובד בשבילך ברקע.
           </li>
-          <li>בחר עיר/אזור עבודה → והמערכת תציג לך רק הודעות חדשות ורלוונטיות.</li>
         </ol>
 
         <div class="notice">
           <p style="margin:0;">
-            ✅ הכל עובד בצורה פשוטה: אתה קובע את העיר — והסדרן מסנן עבורך את ההודעות החדשות.
-          </p>
-        </div>
-
-        <div class="notice">
-          <p style="margin:0 0 6px 0;">
-            <span class="strong">פקודות שימוש מהירות בוואטסאפ:</span>
-          </p>
-          <ul style="margin:0; padding-right:18px; line-height:1.8;">
-            <li><span class="strong">פנוי באשדוד</span> – מציין שאתה פנוי בעיר אשדוד.</li>
-            <li><span class="strong">פנוי בתל אביב+</span> – פנוי ומחפש גם בערים קרובות.</li>
-            <li><span class="strong">תפוס</span> – עוצר שליחת נסיעות זמנית.</li>
-            <li><span class="strong">עצור</span> – עוצר את המערכת עד הודעה חדשה.</li>
-            <li><span class="strong">רענון</span> – מרענן את הסינון והמצב.</li>
-          </ul>
-          <p style="margin:6px 0 0 0; font-size:0.92rem; color:#555;">
-            הפקודות נשלחות בוואטסאפ בצורה חופשית, בדיוק כמו הודעה רגילה.
+            ✅ אתה לא צריך מחשבים, התקנות או התעסקות טכנית – רק טלפון ווואטסאפ.
           </p>
         </div>
       </div>
 
+      <!-- צד שמאל: מודל עבודה ויצירת קשר -->
       <div class="card">
-        <h2>מחירון ותמיכה</h2>
-        <p>🧪 <span class="strong">7 ימים ניסיון חינם</span> – בלי התחייבות.</p>
-        <p>💰 לאחר מכן: <span class="strong">500 ₪ תשלום חד-פעמי</span>.</p>
-
-        <div class="notice">
-          <p style="margin:0 0 8px 0;"><span class="strong">תמיכה (אופציונלי – רק למי שרוצה):</span></p>
-          <ul style="margin:0; padding-right: 18px;">
-            <li>🛠️ <span class="strong">תמיכה רגילה:</span> 32 ₪ לחודש (רשות).</li>
-            <li>🚀 <span class="strong">מסלול פרו:</span> 100 ₪ לחודש – כולל <span class="strong">חיזוי</span> ו־<span class="strong">סידור יומי</span>.</li>
-          </ul>
-        </div>
-
-        <h2>פרטיות ודיסקרטיות</h2>
+        <h2>איך מקבלים את השירות?</h2>
         <p>
-          🔒 המערכת עובדת <span class="strong">מקומית על המחשב</span> שלך.
-          <span class="strong">לא שומרת מידע בענן</span> ולא שולחת נתונים לשרתים חיצוניים.
-          הכל אישי, פרטי ודיסקרטי.
+          ההפעלה וההגדרה נעשות <span class="strong">רק באופן אישי</span>, כדי להתאים את המערכת אליך:
+        </p>
+        <ul>
+          <li>שיחת היכרות קצרה והבנה של אזור העבודה שלך.</li>
+          <li>חיבור ראשוני של הוואטסאפ שלך למערכת.</li>
+          <li>הסבר קצר על הפקודות (פנוי, תפוס, עצור וכו').</li>
+        </ul>
+
+        <h2>מודל תשלום</h2>
+        <p>
+          💰 המערכת מיועדת לנהגים שרוצים לעבוד מסודר ולקבל ערך שוטף.<br>
+          את פרטי המחיר, מסלול הניסיון והתנאים הסופיים אנחנו מסבירים אישית בשיחה,
+          בהתאם לצורת העבודה שלך (נהג בודד / כמה נהגים / צי קטן).
         </p>
 
+        <h2>יצירת קשר</h2>
+        <p>מעוניין לשמוע אם זה מתאים לך?</p>
         <a class="btn"
-           href="https://1drv.ms/u/c/db0c3a46b2c77df0/IQDZr-9xqD-lT4JkCXItHf2fAcZ8XphDnM2QPTsPaFQYnk4?e=2QrBcW"
+           href="https://wa.me/972526015599?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20HakamPro%20Dispatcher%20%D7%94%D7%A1%D7%93%D7%A8%D7%9F%20%D7%94%D7%90%D7%99%D7%A9%D7%99"
            target="_blank">
-          📥 הורדת HakamPro Dispatcher
+          📲 שליחת הודעה בוואטסאפ למוטי
         </a>
         <p class="mini">
-          אחרי ההורדה: חלץ את הקבצים לתיקייה → הפעל את התוכנה → סרוק QR והתחל לעבוד.
+          📞 מרדכי (מוטי) – פיתוח המערכת: <span class="strong">052-6015599</span><br>
+          📞 אביחי – מחלקת שיווק: <span class="strong">054-6558391</span><br>
+          אפשר לפנות אלינו בוואטסאפ או בטלפון, ואנחנו נסביר איך זה עובד ונבדוק התאמה.
         </p>
       </div>
     </div>
 
-    <h2>דרישות מערכת</h2>
+    <!-- מה התוכנה לא עושה -->
+    <h2>מה המערכת <span class="strong">לא</span> עושה?</h2>
+    <p>
+      חשוב להדגיש: המערכת <span class="strong">לא מספקת קבוצות וואטסאפ ולא מבטיחה נסיעות</span>.<br>
+      HakamPro Dispatcher היא מערכת סינון וניהול חכמה בלבד –
+      היא עובדת על הקבוצות שאתה כבר חבר בהן, ועוזרת לך
+      לא לפספס נסיעות ומשלוחים שמתאימים לך.
+    </p>
+    <p>
+      האחריות על הצטרפות לקבוצות, תכני ההודעות, סגירת נסיעות וההתנהלות מול נוסעים ולקוחות – היא עליך כנהג.
+      המערכת באה לעזור לך להיות מסודר יותר, יעיל יותר, ופחות תלוי בגלילה אינסופית בוואטסאפ.
+    </p>
+
+    <!-- דרישות בסיס -->
+    <h2>דרישות בסיס</h2>
     <ul>
-      <li>Windows (מחשב נייח/נייד)</li>
-      <li>אינטרנט פעיל</li>
-      <li>WhatsApp פעיל בטלפון</li>
-      <li>Chrome / Firefox מותקנים</li>
+      <li>טלפון עם וואטסאפ פעיל.</li>
+      <li>חיבור לאינטרנט.</li>
+      <li>אופציה קצרה לחיבור ראשוני (פגישה/שיתוף מסך) לחיבור הוואטסאפ למערכת.</li>
     </ul>
 
-    <h2>שאלות / התקנה / תמיכה</h2>
+    <!-- פרטי קשר -->
+    <h2>שאלות / שיחה / בדיקת התאמה</h2>
     <p>
-      📞 מרדכי – מחלקת פיתוח: <span class="strong">052-6015599</span><br>
-      📞 אביחי – מחלקת שיווק: <span class="strong">054-6558391</span>
+      📞 מרדכי (מוטי) – פיתוח: <span class="strong">052-6015599</span><br>
+      📞 אביחי – שיווק וליווי נהגים: <span class="strong">054-6558391</span><br>
+      נשמח לענות על שאלות ולבדוק יחד האם המערכת מתאימה לסגנון העבודה שלך.
     </p>
 
     <div class="footer">
